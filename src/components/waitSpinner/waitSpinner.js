@@ -8,7 +8,7 @@ import "./waitSpinner.scss";
  */
 const WaitSpinner = () => {
   return (
-    <div className="spinner">
+    <div className="spinner" data-testid="wait">
       <CircularProgress id="circularProgress" size={"12rem"} />
     </div>
   );

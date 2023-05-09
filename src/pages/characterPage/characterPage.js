@@ -51,6 +51,7 @@ const CharacterPage = ({ router }) => {
     if (charsSelector?.length === 0) dispatch(fetchCharactersRequest());
   }, []);
 
+  // Filter the driver champion of the year
   const driveChampion = useMemo(() => {
     let driver = charsSelector.find((char) => char?.season === year?.toString())
       ?.DriverStandings?.Driver?.code;
@@ -69,7 +70,7 @@ const CharacterPage = ({ router }) => {
           <List>
             {racesSelector?.map((char) => {
               return (
-                <div key={char.round}>
+                <div key={char.round} data-testid="racesList">
                   <ListItemButton
                     sx={
                       char.Results?.Driver?.code === driveChampion

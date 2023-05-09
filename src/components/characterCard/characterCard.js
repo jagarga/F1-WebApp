@@ -57,7 +57,7 @@ CharacterCard.propTypes = {
   router: PropTypes.shape({
     navigate: PropTypes.func,
   }),
-  year: PropTypes.number,
+  year: PropTypes.string,
 };
 
 export default useWithRouter(memo(CharacterCard));

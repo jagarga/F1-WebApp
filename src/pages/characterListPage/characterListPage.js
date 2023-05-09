@@ -39,7 +39,6 @@ const CharacterListPage = () => {
    * Function for render the characters card component
    * @param {Object} array category
    */
-
   const renderCharactersCard = (characters) =>
     characters?.map((char) => {
       return (
@@ -57,7 +56,7 @@ const CharacterListPage = () => {
       <Suspense fallback={<WaitSpinner />}>
         {isLoading && <WaitSpinner size="2rem" />}
         <div className="container">
-          <Grid container spacing={2}>
+          <Grid container spacing={2} data-testid="charList">
             {renderCharactersCard(characters)}
           </Grid>
         </div>

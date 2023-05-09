@@ -7,6 +7,11 @@ import Container from "@mui/material/Container";
 import WaitSpinner from "../waitSpinner/waitSpinner";
 import Logo from "./../../assets/img/formula-1-logo2.png";
 
+const goToThisPage = () => {
+  const url = "/";
+  window.location = url;
+};
+
 /**
  * Component with app header in responsive design
  */
@@ -21,7 +26,8 @@ const AppHeader = () => {
                 src={Logo}
                 width="8%"
                 height="5%"
-                onClick={() => (window.location = "/")}
+                onClick={goToThisPage}
+                data-testid="goToThisPage"
                 style={{ cursor: "pointer" }}
               />
               <Typography
@@ -35,7 +41,7 @@ const AppHeader = () => {
                   marginLeft: "1rem",
                   marginBottom: "0rem",
                 }}
-                onClick={() => (window.location = "/")}
+                onClick={goToThisPage}
               >
                 F1 Web APP
               </Typography>
