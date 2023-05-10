@@ -24,14 +24,14 @@ import {
   Avatar,
   ListItemButton,
 } from "@mui/material";
-import "./characterPage.scss";
+import "./racesPage.scss";
 import WaitSpinner from "../../components/waitSpinner/waitSpinner";
 import { useWithRouter } from "../../hooks/withRouter";
 
 /**
  * Component with the information of use
  */
-const CharacterPage = ({ router }) => {
+const RacesPage = ({ router }) => {
   const dispatch = useDispatch();
   const isLoadingRace = useSelector(getIsLoadingCharacterSelector);
   const racesSelector = useSelector(getCharacterSelector);
@@ -101,7 +101,7 @@ const CharacterPage = ({ router }) => {
   );
 };
 
-CharacterPage.propTypes = {
+RacesPage.propTypes = {
   router: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.any,
@@ -109,4 +109,4 @@ CharacterPage.propTypes = {
   }),
 };
 
-export default useWithRouter(memo(CharacterPage));
+export default useWithRouter(memo(RacesPage));

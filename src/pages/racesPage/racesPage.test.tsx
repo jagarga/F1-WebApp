@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cleanup, render, screen } from "@testing-library/react";
 
-import CharacterPage from "./CharacterPage.js";
+import RacesPage from "./racesPage.js";
 
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
@@ -17,7 +17,7 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
-describe("Render CharacterPage page", () => {
+describe("Render RacesPage page", () => {
   let wrapper;
 
   const initialState = {
@@ -31,7 +31,7 @@ describe("Render CharacterPage page", () => {
     wrapper = (
       <BrowserRouter>
         <Provider store={store}>
-          <CharacterPage />
+          <RacesPage />
         </Provider>
       </BrowserRouter>
     );
@@ -39,7 +39,7 @@ describe("Render CharacterPage page", () => {
 
   afterEach(cleanup);
 
-  it("Render character list", () => {
+  it("Render races list", () => {
     render(wrapper);
     expect(screen.queryAllByTestId("racesList").length).toBe(18);
   });
@@ -59,7 +59,7 @@ describe("Render waitspinner", () => {
     wrapper = (
       <BrowserRouter>
         <Provider store={store}>
-          <CharacterPage />
+          <RacesPage />
         </Provider>
       </BrowserRouter>
     );
