@@ -62,7 +62,7 @@ const RacesPage = ({ router }) => {
     <>
       <Suspense fallback={<WaitSpinner />}>
         {isLoading && <WaitSpinner size="2rem" />}
-        <Paper elevation={24} className="charContainer">
+        <Paper elevation={24} className="raceContainer">
           <Typography variant="h3" align="center">
             {racesSelector?.name}
           </Typography>
